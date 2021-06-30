@@ -1,0 +1,26 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#jumbotron {
+background-color: #1c1d25;
+color: white;
+font-weight: 700;
+padding: 40px;
+text-align: center;
+}
+
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px 10px;
+}
+
+.card-body {
+  background-color: #e0e7e9;
+}
