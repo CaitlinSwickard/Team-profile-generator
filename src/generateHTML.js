@@ -1,4 +1,61 @@
-function generateHtml (name, role, id, email, officeNum, github, school) {
+
+function generateManager() {
+  return `
+  <!-- Manager card -->
+          <div class="card text" style="width: 18rem;">
+            <div class="card-body">
+              <h3 class="card-title text-center" id="name">${answers.name}</h3>
+              <h5 id="role" class="text-center"><i class="fas fa-user-tie"></i> Manager</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" id="id">ID:${answers.id}</li>
+              <li class="list-group-item" id="email"><a href="mailto:${answers.email}">Email:${answers.email}</a></li>
+              <li class="list-group-item" id="officeNum">Office number:${answers.officeNum}</li>
+            </ul>
+          </div>
+  
+  `
+}
+
+function generateEngineer() {
+  return `
+  
+  <!-- Engineer card -->
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title text-center" id="name">${answers.name}</h3>
+      <h5 id="role" class="text-center"><i class="fas fa-user-ninja"></i> Engineer</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="id">ID:${answers.id}</li>
+      <li class="list-group-item" id="email"><a href="mailto:${answers.email}">Email:${answers.email}</a></li>
+      <li class="list-group-item" id="github"><a href="https://github.com/${answers.github}" target="_blank">Github:${answers.github}</a></li>
+    </ul>
+  </div>
+  
+  `
+}
+
+function generateIntern() {
+  return `
+  <!-- Intern card -->
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title text-center" id="name">${answers.name}</h3>
+      <h5 id="role" class="text-center"><i class="fas fa-user-graduate"></i> Intern</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="id">ID:${answers.id}</li>
+      <li class="list-group-item" id="email"><a href="mailto:${answers.email}">Email:${answers.email}</a></li>
+      <li class="list-group-item" id="school">School:${answers.school}</li>
+    </ul>
+  </div>
+  
+  `
+}
+
+
+function generateHtml () {
   return `
 
   <!DOCTYPE html>
@@ -31,44 +88,12 @@ function generateHtml (name, role, id, email, officeNum, github, school) {
     <div class="container" id="card-container">
       <div class="row">
         <div class="card-area col-12 d-flex justify-content-center mt-5">
-          <!-- Manager card -->
-          <div class="card text" style="width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title text-center" id="name">${name}</h3>
-              <h5 id="role" class="text-center"><i class="fas fa-user-tie"></i> Manager</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="id">ID:${id}</li>
-              <li class="list-group-item" id="email"><a href="${email}">Email:${email}</a></li>
-              <li class="list-group-item" id="officeNum">Office number:${officeNum}</li>
-            </ul>
-          </div>
+          
   
-          <!-- Engineer card -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title text-center" id="name">${name}</h3>
-              <h5 id="role" class="text-center"><i class="fas fa-user-ninja"></i> Engineer</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="id">ID:${id}</li>
-              <li class="list-group-item" id="email"><a href="${email}">Email:${email}</a></li>
-              <li class="list-group-item" id="github"><a href="https://github.com/" target="_blank">Github:${github}</a></li>
-            </ul>
-          </div>
+
   
-          <!-- Intern card -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title text-center" id="name">${name}</h3>
-              <h5 id="role" class="text-center"><i class="fas fa-user-graduate"></i> Intern</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="id">ID:${id}</li>
-              <li class="list-group-item" id="email"><a href="mailto:someone@yoursite.com">Email:${email}</a></li>
-              <li class="list-group-item" id="school">School:${school}</li>
-            </ul>
-          </div>
+
+       
         </div>
       </div>
     </div>
@@ -80,3 +105,5 @@ function generateHtml (name, role, id, email, officeNum, github, school) {
 
   `
 }
+
+// module.exports = generateHtml;
