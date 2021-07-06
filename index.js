@@ -1,13 +1,14 @@
 
 // packages needed for this application
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-
 const generateHTML = require('./src/generateHTML');
-const answersArr = [];
+
+let answersArr = [];
 
 // prompt questions
 const questions = [
@@ -37,7 +38,7 @@ const manager = [
     message: 'What is their email?',
   },
   {
-    type: 'input',
+    type: 'number',
     name: 'office',
     message: 'What is their Office number?'
   }
@@ -99,6 +100,7 @@ const intern = [
 function init() {
   inquirer.prompt(questions).then(answers => {
     if(answers.role === 'Im all done!') {
+      console.log(answersArr);
       generateTeam();
       return;
     }
@@ -129,12 +131,12 @@ function init() {
   })
 };
 
-
 // Function call to initialize app
 init();
 
 
-
-function generateTeam() {
-  fs.writeToFile('generatedTeam.html', generateHTML(answersArr))
+// to write the file of team members
+function generateTeam(answersArr) {
+  fs.writeFile('generatedTeam.html', generateHTML(answersArr))
 };
+
