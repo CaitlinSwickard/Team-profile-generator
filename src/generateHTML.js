@@ -1,56 +1,54 @@
+let newCard;
 
-
-
-function generateHTML(answersArr) {
+const generateHTML = (answersArr) => {
   let employeeCard = [];
   for (let i = 1; i < answersArr.length; i++) {
-    if (answersArr[i].getRole() === 'Manager') {
-      let newCard;
-      switch (answersArr[i].getRole()) {
-        case 'Engineer': newCard =
-          `
-        <!-- Engineer card -->
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h3 class="card-title text-center" id="name">${answersArr[i].name}</h3>
-            <h5 id="role" class="text-center"><i class="fas fa-user-ninja"></i> Engineer</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
-            <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
-            <li class="list-group-item" id="github"><a href="https://github.com/${answersArr[i].github}" target="_blank">Github:${answersArr[i].github}</a></li>
-          </ul>
-        </div>
-        `
-          employeeCard.push(newCard)
-          break
+    
+    switch (answersArr[i].getRole()) {
+      case 'Engineer':
+        newCard += `
+<!-- Engineer card -->
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title text-center" id="name">${answersArr[i].name}</h3>
+    <h5 id="role" class="text-center"><i class="fas fa-user-ninja"></i> ${answersArr[i].getRole()}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
+    <li class="list-group-item" id="github"><a href="https://github.com/${answersArr[i].github}" target="_blank">Github:${answersArr[i].github}</a></li>
+  </ul>
+</div>`;
 
-        case 'Intern': newCard =
-          `
-        <!-- Intern card -->
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h3 class="card-title text-center" id="name">${answersArr[i].name}</h3>
-            <h5 id="role" class="text-center"><i class="fas fa-user-graduate"></i> Intern</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
-            <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
-            <li class="list-group-item" id="school">School:${answersArr[i].school}</li>
-          </ul>
-        </div>
-        `
-          employeeCard.push(newCard)
-          break
-      }
-    };
-  }
+        employeeCard.push(newCard)
+        break;
+
+      case 'Intern':
+        newCard += `   
+<!-- Intern card -->
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title text-center" id="name">${answersArr[i].name}</h3>
+    <h5 id="role" class="text-center"><i class="fas fa-user-graduate"></i> ${answersArr[i].getRole()}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
+    <li class="list-group-item" id="school">School:${answersArr[i].school}</li>
+  </ul>
+</div>`;
+
+        employeeCard.push(newCard)
+        break;
+    }
+  };
+
 
   return `
 
   <!DOCTYPE html>
   <html lang="en">
-  
+
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,10 +60,10 @@ function generateHTML(answersArr) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/3ff242710e.js" crossorigin="anonymous"></script>
-  
+
     <title>Team Profile</title>
   </head>
-  
+
   <body>
     <!-- jumbotron -->
     <div id="jumbotron" class="jumbotron jumbotron-fluid">
@@ -73,39 +71,35 @@ function generateHTML(answersArr) {
         <h1 class="display-1">The Dream Team</h1>
       </div>
     </div>
-  
+
     <!-- card container -->
     <div class="container" id="card-container">
       <div class="row">
         <div class="card-area col-12 d-flex justify-content-center mt-5">
-        <!-- Manager card -->
-        <div class="card text" style="width: 18rem;">
-          <div class="card-body">
-            <h3 class="card-title text-center" id="name">${answersArr[0].name}</h3>
-            <h5 id="role" class="text-center"><i class="fas fa-user-tie"></i> Manager</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="id">ID:${answersArr[0].id}</li>
-            <li class="list-group-item" id="email"><a href="mailto:${answersArr[0].email}">Email:${answersArr[0].email}</a></li>
-            <li class="list-group-item" id="officeNum">Office number:${answersArr[0].officeNum}</li>
-          </ul>
-        </div>
-          
+<!-- Manager card -->
+<div class="card text" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title text-center" id="name">${answersArr[0].name}</h3>
+    <h5 id="role" class="text-center"><i class="fas fa-user-tie"></i> Manager</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="id">ID:${answersArr[0].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[0].email}">Email:${answersArr[0].email}</a></li>
+    <li class="list-group-item" id="officeNum">Office number:${answersArr[0].officeNum}</li>
+  </ul>
+</div>
+${newCard}
 
-       
         </div>
       </div>
     </div>
-  
-  
-  </body>
-  
-  </html>
 
-  `
+
+  </body>
+
+  </html>`;
 }
 
+
 module.exports = generateHTML;
-
-
 

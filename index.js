@@ -136,7 +136,12 @@ init();
 
 
 // to write the file of team members
-function generateTeam(answersArr) {
-  fs.writeFile('generatedTeam.html', generateHTML(answersArr))
+function generateTeam() {
+  fs.writeFileSync('./dist/generatedTeam.html', generateHTML(answersArr), "utf-8");
+  console.log('Dream Team created!')
 };
+
+
+
+
 
