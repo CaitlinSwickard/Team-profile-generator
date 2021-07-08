@@ -14,9 +14,9 @@ const generateHTML = (answersArr) => {
     <h5 id="role" class="text-center"><i class="fas fa-user-ninja"></i> ${answersArr[i].getRole()}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
-    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
-    <li class="list-group-item" id="github"><a href="https://github.com/${answersArr[i].github}" target="_blank">Github:${answersArr[i].github}</a></li>
+    <li class="list-group-item" id="id">ID: ${answersArr[i].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email: ${answersArr[i].email}</a></li>
+    <li class="list-group-item" id="github"><a href="https://github.com/${answersArr[i].github}" target="_blank">Github: ${answersArr[i].github}</a></li>
   </ul>
 </div>`;
 
@@ -32,9 +32,9 @@ const generateHTML = (answersArr) => {
     <h5 id="role" class="text-center"><i class="fas fa-user-graduate"></i> ${answersArr[i].getRole()}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" id="id">ID:${answersArr[i].id}</li>
-    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email:${answersArr[i].email}</a></li>
-    <li class="list-group-item" id="school">School:${answersArr[i].school}</li>
+    <li class="list-group-item" id="id">ID: ${answersArr[i].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[i].email}">Email: ${answersArr[i].email}</a></li>
+    <li class="list-group-item" id="school">School: ${answersArr[i].school}</li>
   </ul>
 </div>`;
 
@@ -83,9 +83,9 @@ const generateHTML = (answersArr) => {
     <h5 id="role" class="text-center"><i class="fas fa-user-tie"></i> Manager</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" id="id">ID:${answersArr[0].id}</li>
-    <li class="list-group-item" id="email"><a href="mailto:${answersArr[0].email}">Email:${answersArr[0].email}</a></li>
-    <li class="list-group-item" id="officeNum">Office number:${answersArr[0].officeNum}</li>
+    <li class="list-group-item" id="id">ID: ${answersArr[0].id}</li>
+    <li class="list-group-item" id="email"><a href="mailto:${answersArr[0].email}">Email: ${answersArr[0].email}</a></li>
+    <li class="list-group-item" id="officeNum">Office number: ${answersArr[0].officeNum}</li>
   </ul>
 </div>
 ${newCard}
