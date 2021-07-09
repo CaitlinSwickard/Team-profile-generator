@@ -1,6 +1,5 @@
 
 // packages needed for this application
-
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -11,7 +10,7 @@ const generateHTML = require('./src/generateHTML');
 
 let answersArr = [];
 
-// prompt questions
+// prompt main menu questions
 const questions = [
   {
     type: 'list',
@@ -21,7 +20,7 @@ const questions = [
   }
 ];
 
-
+// manager questions
 const manager = [
   {
     type: 'input',
@@ -46,7 +45,7 @@ const manager = [
 
 ];
 
-
+// engineer questions
 const engineer = [
   {
     type: 'input',
@@ -71,7 +70,7 @@ const engineer = [
 
 ];
 
-
+// intern questions
 const intern = [
   {
     type: 'input',
@@ -102,28 +101,28 @@ function init() {
   // prompt questions
   inquirer.prompt(questions).then(answers => {
     // if done adding employees generate team
-    if(answers.role === 'Im all done!') {
+    if (answers.role === 'Im all done!') {
       console.log(answersArr);
       generateTeam();
       return;
     }
-
+    // create manager info
     if (answers.role === 'Manager') {
       inquirer.prompt(manager).then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
         answersArr.push(manager);
         init();
       })
-    } 
-    
+    }
+    // create engineer info
     if (answers.role === 'Engineer') {
       inquirer.prompt(engineer).then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         answersArr.push(engineer);
         init();
       })
-    } 
-    
+    }
+    // create intern info
     if (answers.role === 'Intern') {
       inquirer.prompt(intern).then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
@@ -138,7 +137,7 @@ function init() {
 init();
 
 
-// to write the file of team members
+// to write the file of the new team members
 function generateTeam() {
   fs.writeFileSync('./dist/generatedTeam.html', generateHTML(answersArr), "utf-8");
   console.log('Dream Team created!')

@@ -5,7 +5,7 @@ This project is a Node.js command-line application that takes in information abo
   * [Installation](#install)
   * [Tests](#tests)
   * [Usage](#usage)
-  * For a video on using the app click [here.]()
+  * For a video on using the app click [here.](https://drive.google.com/file/d/16I2oHlp4BGfhdQ6lG-6sOZBrRcYuVOAZ/view?usp=sharing)
 
 
 
@@ -38,7 +38,7 @@ Run the following line of code in your terminal to install all the needed packag
 
 ## Tests
 
-Run the following line of code in the terminal to run the tests for this app : npm run test
+Run the following line of code in the terminal to run the tests for this app : npm run test.
 You will see all 4 test pages and all 14 tests pass for the app. 
 
 ## Usage

@@ -1,6 +1,7 @@
-let newCard;
+
 
 const generateHTML = (answersArr) => {
+  let newCard = '';
   let employeeCard = [];
   for (let i = 1; i < answersArr.length; i++) {
     switch (answersArr[i].getRole()) {
