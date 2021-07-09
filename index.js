@@ -6,6 +6,7 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+
 const generateHTML = require('./src/generateHTML');
 
 let answersArr = [];
@@ -98,7 +99,9 @@ const intern = [
 
 // function to initialize app
 function init() {
+  // prompt questions
   inquirer.prompt(questions).then(answers => {
+    // if done adding employees generate team
     if(answers.role === 'Im all done!') {
       console.log(answersArr);
       generateTeam();
