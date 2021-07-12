@@ -34,16 +34,25 @@ This project is a Node.js command-line application that takes in information abo
 ## Install
 
 Clone project.
-Run the following line of code in your terminal to install all the needed packages: npm i
+Run the following line of code in your terminal to install all the needed packages: 
+```
+npm i
+```
 
 ## Tests
 
-Run the following line of code in the terminal to run the tests for this app : npm run test.
+Run the following line of code in the terminal to run the tests for this app : 
+```
+npm run test
+```
 You will see all 4 test pages and all 14 tests pass for the app. 
 
 ## Usage
 
-Once all the packages have been installed, open terminal and run the following code in command line : node index.js. 
+Once all the packages have been installed, open terminal and run the following code in command line : 
+```
+node index.js
+```
 You will be prompted with questions to fill out employee information. Each type of employee you select will ask an additional question specific to the role of the employee. Once you have added all the employees you need select 'Im all done'. Your employee cards will then generate to the generateTeam.html where you can then view your team. 
 
 ## Built With
