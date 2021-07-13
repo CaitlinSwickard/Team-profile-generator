@@ -25,7 +25,7 @@ describe("getGithub", () => {
 describe("getRole", () => {
 
   it("should return a string of employees role", () => {
-    const role = new Engineer('Amber', 1, 'fakeemail@gmail.com','CaitlinSwick', 'Engineer');
+    const role = new Engineer('Amber', 1, 'fakeemail@gmail.com','CaitlinSwickard', 'Engineer');
 
     expect(role.getRole()).toEqual('Engineer');
   })
