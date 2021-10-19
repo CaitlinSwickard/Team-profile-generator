@@ -1,6 +1,6 @@
 # Team Profile Generator
 
-
+## Description 
 This project is a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Once it is created it allows the user to have easy access to each employees name, id and email to easily contact anyone on the team. Each email is linked to directly email the employee you need to contact. You have 3 choices for employees; a manager, engineer and intern with varying information questions for each role. 
   * [Installation](#install)
   * [Tests](#tests)
@@ -9,7 +9,7 @@ This project is a Node.js command-line application that takes in information abo
 
 
 
-## Criteria
+## User Story
 
 - GIVEN a command-line application that accepts user input
 - WHEN I am prompted for my team members and their information
@@ -33,8 +33,11 @@ This project is a Node.js command-line application that takes in information abo
 
 ## Install
 
-Clone project.
-Run the following line of code in your terminal to install all the needed packages: 
+Clone repository: 
+- https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+
+Install Dependencies: 
+- All NPM packages required for this application are already listed as dependencies in the package.json file. Run the command 'npm i' command in your terminal at the root directory level to install the packages. 
 ```
 npm i
 ```
